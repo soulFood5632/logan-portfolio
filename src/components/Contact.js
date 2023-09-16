@@ -20,10 +20,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "1rem",
   },
   form: {
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    position: "absolute",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    minWidth: '65%'
   },
   input: {
     color: "#fff",
@@ -63,6 +63,12 @@ const InputField = withStyles({
 
 const Contact = () => {
   const classes = useStyles();
+
+  const sendMessage = () => {
+    alert("submitted")
+  }
+
+
   return (
     <Box component="div" className={classes.contactContainer}>
       <Grid container justify="center">
@@ -96,6 +102,7 @@ const Contact = () => {
             fullWidth={true}
             endIcon={<Send />}
             className={classes.button}
+            onClick={sendMessage}
           >
             Contact Me
           </Button>

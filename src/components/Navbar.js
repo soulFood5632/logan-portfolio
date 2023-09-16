@@ -12,7 +12,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
-import ArrowBack from "@material-ui/icons/ArrowBack";
+import MoreVert from "@material-ui/icons/MoreVert";
 import AssignmentInd from "@material-ui/icons/AssignmentInd";
 import Home from "@material-ui/icons/Home";
 import Apps from "@material-ui/icons/Apps";
@@ -21,6 +21,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import avatar from "../avatar.png";
 
 import Footer from "../components/Footer";
+import {Container} from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   appbar: {
@@ -57,53 +59,34 @@ const menuItems = [
 ];
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+
 
   const classes = useStyles();
 
-  const sideList = () => (
-    <Box className={classes.menuSliderContainer} component="div">
-      <Avatar className={classes.avatar} src={avatar} alt="Mahmudul Alam" />
-      <Divider />
-      <List>
-        {menuItems.map((item, i) => (
-          <ListItem
-            button
-            key={i}
-            className={classes.listItem}
-            onClick={() => setOpen(false)}
-            component={Link}
-            to={item.listPath}
-          >
-            <ListItemIcon className={classes.listItem}>
-              {item.listIcon}
-            </ListItemIcon>
-            <ListItemText primary={item.listText} />
-          </ListItem>
-        ))}
-      </List>
-    </Box>
-  );
+
 
   return (
-    <React.Fragment>
-      <Box component="nav">
-        <AppBar position="static" className={classes.appbar}>
-          <Toolbar>
-            <IconButton onClick={() => setOpen(true)}>
-              <ArrowBack className={classes.arrow} />
-            </IconButton>
-            <Typography variant="h5" className={classes.title}>
-              Portfolio
-            </Typography>
-          </Toolbar>
+      <React.Fragment>
+        <AppBar position={"static"} color={"inherit"}>
+            <Container maxWidth={"xl"}>
+              <Toolbar disableGutters>
+                <Box variant={"contained"} sx={{ flexGrow: 10, display: { xs: 'none', md: 'flex'} }}>
+                  {menuItems.map((menuItem) =>(
+                      <Button
+                        key={menuItem.listText}
+                        sx={{ my: 10, color: 'white'}}
+                        component={Link}
+                        to={menuItem.listPath}
+                      >
+                        {menuItem.listText}
+
+                      </Button>
+                  ))}
+                </Box>
+              </Toolbar>
+            </Container>
         </AppBar>
-      </Box>
-      <Drawer open={open} anchor="right" onClose={() => setOpen(false)}>
-        {sideList()}
-        <Footer />
-      </Drawer>
-    </React.Fragment>
+      </React.Fragment>
   );
 };
 

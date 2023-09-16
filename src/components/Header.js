@@ -3,9 +3,12 @@ import Typography from "@material-ui/core/Typography";
 import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import Typed from "react-typed";
 import { makeStyles } from "@material-ui/core/styles";
 import avatar from "../avatar.png";
+import Button from "@material-ui/core/Button";
+import { LinkedIn, GitHub } from "@material-ui/icons";
+import {Container} from "@material-ui/core";
+
 
 const useStyles = makeStyles((theme) => ({
   avatar: {
@@ -14,49 +17,76 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
   },
   title: {
-    color: "tomato",
+    color: "#a82121",
+      fontSize: "90px"
   },
   subtitle: {
     color: "tan",
     textTransform: "uppercase",
   },
+    subtitle2: {
+      color: "gray"
+    },
+
   typedContainer: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%,-50%)",
-    width: "100vw",
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+    minHeight: "85vh",
+    width: "100%",
     textAlign: "center",
-    zIndex: 1,
+      padding: "2rem"
   },
+
+    iconGridOuter: {
+      padding: '5px'
+    },
+
+    iconGrid: {
+        display: 'flex',
+        flexDirection: 'row',
+        maxWidth: 'fit-content',
+        alignContent: 'center',
+        justifyContent: 'center',
+        padding: '1px 0',
+        backgroundColor: 'tan',
+        margin: 'zero auto'
+
+
+    }
 }));
 
-const Header = () => {
+function Header() {
   const classes = useStyles();
 
   return (
     <Box className={classes.typedContainer}>
-      <Grid container justify="center">
-        <Avatar className={classes.avatar} src={avatar} alt="Mahmudul Alam" />
-      </Grid>
+      {/*<Grid container justify="center">*/}
+      {/*  <Avatar className={classes.avatar} src={avatar} alt="Logan Underwood" />*/}
+      {/*</Grid>*/}
       <Typography className={classes.title} variant="h4">
-        <Typed strings={["Mahmudul Alam"]} typeSpeed={40} />
+        Logan Underwood
+      </Typography>
+      <Typography className={classes.subtitle} variant="h5">
+          Interdisciplinary Engineer
       </Typography>
 
-      <Typography className={classes.subtitle} variant="h5">
-        <Typed
-          strings={[
-            "Frontend Developer",
-            "Backend Developer",
-            "Native App Developer",
-          ]}
-          typeSpeed={40}
-          backSpeed={50}
-          loop
-        />
+      <Typography className={classes.subtitle2} variant="h5">
+          Engineering Physics UBC
       </Typography>
+
+        <Container className={classes.iconGridOuter}>
+            <Container className={classes.iconGrid}>
+                <Button size={'large'} target={"_blank"} href={"https://github.com/soulFood5632"}>
+                    <GitHub/>
+                </Button>
+                <Button size={'large'} target={"_blank"} href={"https://www.linkedin.com/in/logan-underwood-ubc-engphys/"}>
+                    <LinkedIn/>
+                </Button>
+            </Container>
+        </Container>
     </Box>
   );
-};
+}
 
 export default Header;

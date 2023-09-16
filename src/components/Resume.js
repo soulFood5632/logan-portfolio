@@ -1,11 +1,18 @@
-import React from "react";
+import React, {useRef} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import Download from "@material-ui/icons/ArrowDownward"
+import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#233",
+  },
+  downloadButton: {
+
+    color: "black",
+    backgroundColor: "#f36e60"
   },
   timeLine: {
     position: "relative",
@@ -93,7 +100,7 @@ const useStyles = makeStyles((theme) => ({
   },
   heading: {
     color: "tomato",
-    padding: "3rem 0",
+    padding: "1rem 0",
     textTransform: "uppercase",
   },
   subHeading: {
@@ -111,17 +118,74 @@ const useStyles = makeStyles((theme) => ({
 
 const Resume = () => {
   const classes = useStyles();
+
+
+  const handleDownloadClick = () => {
+    const link = document.createElement("a")
+    link.download = 'Tech_Resume-2.pdf'
+    link.href = "../Tech_Resume-2.pdf"
+    link.click()
+  }
   return (
     <Box component="header" className={classes.mainContainer}>
-      <Typography variant="h4" align="center" className={classes.heading}>
-        Working Experience
+      <Typography variant="h3" align="center" className={classes.heading}>
+        Experience
       </Typography>
+
+      <Box
+          component="div"
+          style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "7px 0px"}}
+      >
+        <Button
+            variant={"contained"}
+            className={classes.downloadButton}
+            endIcon={<Download />}
+            size={"large"}
+            onClick={handleDownloadClick}>
+
+            Full Resume
+
+        </Button>
+
+      </Box>
+
       <Box component="div" className={classes.timeLine}>
+
         <Typography
           variant="h2"
           className={`${classes.timeLineYear} ${classes.timeLineItem}`}
         >
-          2013
+          2022
+        </Typography>
+
+        <Box component="div" className={classes.timeLineItem}>
+          <Typography
+              variant="h5"
+              align="center"
+              className={classes.subHeading}
+          >
+            Software Construction I
+          </Typography>
+          <Typography variant="body1" align="center" className={classes.body1}>
+            University of British Columbia
+          </Typography>
+          <Typography
+              variant="subtitle1"
+              align="center"
+              className={classes.subtitle1}
+          >
+            As part of this intensive course, I completed 3 coding projects in teams of
+            3. One such project involved preforming a textual analysis of rate my prof reviews so you
+            could predict the rating of a prof from a given textual input. All of the projects
+            taught me critical lessons about documentation, testing, object oriented programming and so much more
+          </Typography>
+        </Box>
+
+        <Typography
+          variant="h2"
+          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+        >
+          2023
         </Typography>
         <Box component="div" className={classes.timeLineItem}>
           <Typography
@@ -129,106 +193,50 @@ const Resume = () => {
             align="center"
             className={classes.subHeading}
           >
-            web design
+            Data and Systems Intern
           </Typography>
           <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
+            Stantec Inc. Vancouver, BC
           </Typography>
           <Typography
             variant="subtitle1"
             align="center"
             className={classes.subtitle1}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
+            Working with our key stake holder, Translink, I worked on an iOS application which help
+            improve communication between operators and maintainers in the Yard Control System (YCS).
+            The application interfaces with a rail signalling machine via UDP to collect up to date
+            data from the field.
+
           </Typography>
         </Box>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2014
-        </Typography>
+
         <Box component="div" className={classes.timeLineItem}>
           <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
+              variant="h5"
+              align="center"
+              className={classes.subHeading}
           >
-            html & css
+            Engineering Physics Robotics Competition
           </Typography>
           <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
+            University Of British Columbia
           </Typography>
           <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
+              variant="subtitle1"
+              align="center"
+              className={classes.subtitle1}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
+            A tradition in Engineering physics is the 2nd year summer robot competition. In this years rendition
+            teams were tasked to build an autonomous robot capable of traversing a mario cart style track against
+            another teams robot. We were responsible for the design, planning, and the eventual construction. The
+            project challenged my ability to stretch my abilities into multiple domains while also giving me a
+            glimpse into the triumphs and pitfalls of working in a team.
+
           </Typography>
         </Box>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2015
-        </Typography>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
-            Fullstack Javascript
-          </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
-          </Typography>
-        </Box>
-        <Typography
-          variant="h2"
-          className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-        >
-          2017
-        </Typography>
-        <Box component="div" className={classes.timeLineItem}>
-          <Typography
-            variant="h5"
-            align="center"
-            className={classes.subHeading}
-          >
-            Django & React
-          </Typography>
-          <Typography variant="body1" align="center" className={classes.body1}>
-            company name where worked
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            align="center"
-            className={classes.subtitle1}
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero quas
-            ipsa, laudantium totam perferendis possimus voluptatibus tenetur.
-            Quasi voluptatibus, nam vitae eaque ad, officia laboriosam
-            repudiandae, rerum necessitatibus nisi mollitia.
-          </Typography>
-        </Box>
+
+
       </Box>
     </Box>
   );

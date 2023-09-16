@@ -6,21 +6,31 @@ import Resume from "./components/Resume";
 import Navbar from "./components/Navbar";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
+import { ThemeProvider, createTheme } from "@material-ui/core/styles";
+
+
 
 import "./App.css";
+import {Container} from "@material-ui/core";
+
+
+
+
 
 function App() {
   return (
-    <React.Fragment>
-      <CssBaseline />
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/resume" component={Resume} />
-        <Route exact path="/portfolio" component={Portfolio} />
-        <Route exact path="/contact" component={Contact} />
-      </Switch>
-    </React.Fragment>
+        <React.Fragment>
+          <CssBaseline />
+          <Navbar />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/resume" component={Resume} />
+                <Route exact path="/portfolio" component={Portfolio} />
+                <Route exact path="/contact" component={Contact} />
+              </Switch>
+
+        </React.Fragment>
+
   );
 }
 
