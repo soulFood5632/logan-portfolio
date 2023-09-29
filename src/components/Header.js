@@ -4,7 +4,6 @@ import Avatar from "@material-ui/core/Avatar";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
-import avatar from "../avatar.png";
 import Button from "@material-ui/core/Button";
 import { LinkedIn, GitHub } from "@material-ui/icons";
 import {Container} from "@material-ui/core";
