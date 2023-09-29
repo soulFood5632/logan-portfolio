@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/%E2%80%9Chttp://www.loganu.ca/static/css/main.45490475.chunk.css",
+    "main.js": "/%E2%80%9Chttp://www.loganu.ca/static/js/main.2eef045e.chunk.js",
+    "main.js.map": "/%E2%80%9Chttp://www.loganu.ca/static/js/main.2eef045e.chunk.js.map",
+    "runtime-main.js": "/%E2%80%9Chttp://www.loganu.ca/static/js/runtime-main.c3f13084.js",
+    "runtime-main.js.map": "/%E2%80%9Chttp://www.loganu.ca/static/js/runtime-main.c3f13084.js.map",
+    "static/js/2.dd454544.chunk.js": "/%E2%80%9Chttp://www.loganu.ca/static/js/2.dd454544.chunk.js",
+    "static/js/2.dd454544.chunk.js.map": "/%E2%80%9Chttp://www.loganu.ca/static/js/2.dd454544.chunk.js.map",
+    "index.html": "/%E2%80%9Chttp://www.loganu.ca/index.html",
+    "precache-manifest.5eea9ce404c7deaf468fd4fc5991d8f8.js": "/%E2%80%9Chttp://www.loganu.ca/precache-manifest.5eea9ce404c7deaf468fd4fc5991d8f8.js",
+    "service-worker.js": "/%E2%80%9Chttp://www.loganu.ca/service-worker.js",
+    "static/css/main.45490475.chunk.css.map": "/%E2%80%9Chttp://www.loganu.ca/static/css/main.45490475.chunk.css.map",
+    "static/js/2.dd454544.chunk.js.LICENSE.txt": "/%E2%80%9Chttp://www.loganu.ca/static/js/2.dd454544.chunk.js.LICENSE.txt",
+    "static/media/IMG_0028.JPG": "/%E2%80%9Chttp://www.loganu.ca/static/media/IMG_0028.cb76dc9b.JPG",
+    "static/media/IMG_0989_Large.jpeg": "/%E2%80%9Chttp://www.loganu.ca/static/media/IMG_0989_Large.178c190b.jpeg",
+    "static/media/App.css": "/%E2%80%9Chttp://www.loganu.ca/static/media/background-photo.e6c4984b.JPG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c3f13084.js",
+    "static/js/2.dd454544.chunk.js",
+    "static/css/main.45490475.chunk.css",
+    "static/js/main.2eef045e.chunk.js"
+  ]
+}
